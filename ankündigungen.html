@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLG-EIL Klasse 8/1 – Ankündigungen</title>
+  <link rel="icon" type="image/png" href="Dein Abschnittstext(4).png">
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+    .update-box {
+      background: #cccccc;
+      border-left: 6px solid #0078D7;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .update-box h2 {
+      color: black;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .tags {
+      margin-bottom: 1rem;
+    }
+    .tag1 {
+      display: inline-block;
+      background-color: #0078D7;
+      color: white;
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 5px;
+    }
+     .tag2 {
+      display: inline-block;
+      background-color: #cc6060;
+      color: black;
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .update-image {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+  </style>
+
+</head>
+
+  <body>
+  <header class="header">
+  <div class="header-flex">
+    <img src="Dein Abschnittstext(4).png" class="corner-logo left-logo" alt="Logo links">
+    
+    <div class="title-wrapper">
+    <h1 class="main-title">Klasse 8/1 – Martin-Luther-Gymnasium Eisleben</h1>
+    <h2 class="sub-title">– Webseite –</h2>
+    </div>
+
+    <img src="Dein Abschnittstext(4).png" class="corner-logo right-logo" alt="Logo rechts" style="width: 65px; height: 65px; display: block;">
+
+  </div>
+
+ <nav>
+  <!-- Öffentlich -->
+  <ul class="nav nav-offen fade-in">
+    <li><a href="index.html">Start</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+
+  <!-- Für eingeloggte Nutzer -->
+  <ul class="nav nav-intern fade-in" style="display: none;">
+      <li><a href="index.html">Start</a></li>
+    <li><a href="ankündigungen.html" class="active">Ankündigungen</a></li>
+    <li><a href="termine-und-veranstaltungen.html">Termine & Veranstaltungen</a></li>
+    <li><a href="tipps-tricks-pläne.html">Tipps, Tricks, Pläne</a></li>
+    <li><a href="downloads-formulare-protokolle.html">Downloads, Formulare, Protokolle</a></li>
+    <li><a href="planungen-und-infos.html">Planung Sommerfest</a></li>
+    <li><a href="spaß-und-fun.html">Spaß & Fun</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+
+  <!-- Nur für Klassensprecher -->
+  <ul class="nav nav-klassensprecher fade-in" style="display: none;">
+    <li><a href="interne-infos.html">Interne Infos</a></li>
+    <li><a href="problematische-schüler.html">Problematische Schüler</a></li>
+  </ul>
+</nav>
+
+    <div id="login-status" style="position: absolute; top: 190px; right: 20px; font-weight: bold;">
+    </div>
+    
+    
+</header>
+
+<div style="position: absolute; top: 20px; right: 20px; text-align: right;">
+  <input type="password" id="password-input" placeholder="Passwort" style="padding: 4px 8px; border-radius: 4px; border: 1px solid #ccc;">
+  <button onclick="login()" style="padding: 4px 10px; border: none; background-color: #0078D7; color: white; border-radius: 4px;">Login</button>
+  <div id="login-message" style="color: red; font-size: 0.9rem; margin-top: 4px;"></div>
+</div>
+
+
+  <div id="logout-container" style="display: none; position: absolute; top: 266px; right: 20px;">
+  <button onclick="logout()" style="padding: 4px 10px; border: none; background-color: #cc0000; color: white; border-radius: 4px;">
+    Logout
+  </button>
+</div>
+    
+  
+  <main class="main-content">
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const istEingeloggt = sessionStorage.getItem("eingeloggt") === "true";
+
+    if (!istEingeloggt) {
+      const main = document.querySelector("main");
+      main.innerHTML = `
+        <div style="text-align: center; margin-top: 100px;">
+          <div style="font-size: 60px; color: #cc0000; margin-bottom: 20px;">⚠️</div>
+          <h2 style="color: red;">Diese Seite ist passwortgeschützt</h2>
+          <p>Bitte logge dich oben im Header ein, um den Inhalt dieser Seite zu sehen.</p>
+        </div>
+      `;
+    }
+  });
+</script>
+    
+    
+    <h1 style="text-align: center; margin-top: 0.5rem; margin-bottom: 60px; color: #cccccc"><u>Klasse 8/1 – Ankündigungen</u></h1>
+    
+    <div style="text-align: center; margin-bottom: 30px;" class="fade-in">
+  <input type="text" id="searchInput" placeholder="🔍 Suche in Ankündigungen..." 
+         style="padding: 10px; width: 60%; max-width: 400px; font-size: 1rem; border: 1px solid #cccc; border-radius: 6px;">
+    </div>
+    
+
+
+    
+    <!-- UPDATE BOX -->
+
+        <div class="update-box fade-in">
+      <h2>A02 – Sommerfest am 26.06.2025</h2>
+      <div class="tags">
+        <span class="tag1 date-tag" data-date="2025-05-21">Erstellt am: <b>21.05.2025</b></span>
+        <span class="tag1">Author: <b>Julian Kaiser</b></span>
+        <span class="tag2 neu-tag">NEU</span>
+      </div>
+      <p>Am 26.05.2025 wird von 07:30 Uhr bis 12:00 Uhr das jährliche Sommerfest stattfinden! <br>
+      Vielen Dank!</p>
+    </div>
+    
+    
+    <div class="update-box fade-in">
+      <h2>A01 – Schülerratssitzung am 21.05.2025</h2>
+      <div class="tags">
+        <span class="tag1 date-tag" data-date="2025-05-21">Erstellt am: <b>21.05.2025</b></span>
+        <span class="tag1">Author: <b>Julian Kaiser</b></span>
+        <span class="tag2 neu-tag">NEU</span>
+      </div>
+      <p>Am 21.05.2025 in der fünften Stunde findet die Schülerratssitzung zur Planung des Sommerfestes statt. Werdet euch bis dahin bitte darüber einig, was wir zum Sommerfest machen wollen.<br>
+      Vielen Dank!</p>
+    </div>
+
+    <!-- Weitere Updates hier -->
+  </main>
+
+<footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Julian Kaiser | Alle Rechte vorbehalten</p>
+    </div>
+  </footer>
+
+
+    
+
+<script>
+  document.getElementById("searchInput").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    const updates = document.querySelectorAll(".update-box");
+
+    updates.forEach(update => {
+      const text = update.innerText.toLowerCase();
+      update.style.display = text.includes(query) ? "block" : "none";
+    });
+  });
+</script>
+
+
+
+<script>
+  function login() {
+    const input = document.getElementById("password-input").value;
+    const messageBox = document.getElementById("login-message");
+
+    const passwortNormal = "mlg8klasse";
+    const passwortSprecher = "mlg8sprecher";
+
+    if (input === passwortSprecher) {
+      sessionStorage.setItem("rolle", "sprecher");
+      sessionStorage.setItem("eingeloggt", "true");
+      messageBox.style.color = "green";
+      messageBox.innerHTML = "Erfolgreich als <strong>Klassensprecher</strong> eingeloggt!<br>Du hast Zugriff auf alle Seiten.";
+    } else if (input === passwortNormal) {
+      sessionStorage.setItem("rolle", "normal");
+      sessionStorage.setItem("eingeloggt", "true");
+      messageBox.style.color = "green";
+      messageBox.innerHTML = "Erfolgreich eingeloggt!<br>Du hast Zugriff auf alle normalen Seiten.";
+    } else {
+      sessionStorage.removeItem("rolle");
+      sessionStorage.setItem("eingeloggt", "false");
+      messageBox.style.color = "red";
+      messageBox.textContent = "Falsches Passwort!";
+      return;
+    }
+
+    setTimeout(() => {
+      messageBox.textContent = "";
+      location.reload(); // Seite neu laden, um Inhalte sichtbar zu machen
+    }, 3000);
+  }
+
+  function logout() {
+    sessionStorage.removeItem("eingeloggt");
+    sessionStorage.removeItem("rolle");
+    window.location.href = "index.html"; // Automatische Weiterleitung zur Startseite
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const statusBox = document.getElementById("login-status");
+    const logoutContainer = document.getElementById("logout-container");
+    const istEingeloggt = sessionStorage.getItem("eingeloggt") === "true";
+    const rolle = sessionStorage.getItem("rolle");
+
+    const navOffen = document.querySelector(".nav-offen");
+    const navIntern = document.querySelector(".nav-intern");
+    const navKlassensprecher = document.querySelector(".nav-klassensprecher");
+
+    if (istEingeloggt) {
+      if (navOffen) navOffen.style.display = "none";
+      if (navIntern) navIntern.style.display = "flex";
+
+      if (rolle === "sprecher") {
+        if (navKlassensprecher) navKlassensprecher.style.display = "flex";
+        statusBox.textContent = "🔓 Eingeloggt als Klassensprecher";
+      } else {
+        if (navKlassensprecher) navKlassensprecher.style.display = "none";
+        statusBox.textContent = "🔓 Eingeloggt";
+      }
+
+      statusBox.style.color = "green";
+      if (logoutContainer) logoutContainer.style.display = "block";
+    } else {
+      if (navOffen) navOffen.style.display = "flex";
+      if (navIntern) navIntern.style.display = "none";
+      if (navKlassensprecher) navKlassensprecher.style.display = "none";
+
+      statusBox.textContent = "🔒 Ausgeloggt";
+      statusBox.style.color = "red";
+      if (logoutContainer) logoutContainer.style.display = "none";
+    }
+  });
+</script>
+
+    
+    
+</body>
+</html>
